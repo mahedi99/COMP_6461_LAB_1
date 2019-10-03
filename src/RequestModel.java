@@ -10,10 +10,11 @@ public class RequestModel {
     public String helpArg;
     public boolean verbose;
     public boolean isHeader;
-    public String headerData;
+    public String headerData = "";
     public boolean isInlineData;
     public String inlineData; //-d
     public boolean isFile;
-    public String fileData;
+    public String fileName;
+    public String fileDir;
     public String url;
 }

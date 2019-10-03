@@ -56,8 +56,11 @@ public class ParseRequest {
                                 requestModel.verbose = true;
                                 break;
                             case "-h":
+                                if (requestModel.isHeader){
+                                    requestModel.headerData+=",";
+                                }
+                                requestModel.headerData += commandArray[i + 1];
                                 requestModel.isHeader = true;
-                                requestModel.headerData = commandArray[i + 1];
                                 i++;
                                 break;
                         }
@@ -86,21 +89,25 @@ public class ParseRequest {
                                     requestModel.inlineData = commandArray[i + 1] + commandArray[i + 2];
                                     i += 2;
                                 } else {
-                                    i++; //ignoring this command
+                                    i++; //passing this command
                                 }
                                 break;
                             case "-f":
                                 if (!requestModel.isInlineData) {
                                     requestModel.isFile = true;
-                                    requestModel.fileData = commandArray[i + 1];
+                                    requestModel.fileName = commandArray[i + 1];
+                                    requestModel.fileDir = Main.userStringInput("Provide file path : \n");
                                     i++;
                                 } else {
-                                    i++;//ignoring this command
+                                    i++;//passing this command
                                 }
                                 break;
                             case "-h":
+                                if (requestModel.isHeader){
+                                    requestModel.headerData+=",";
+                                }
+                                requestModel.headerData += commandArray[i + 1];
                                 requestModel.isHeader = true;
-                                requestModel.headerData = commandArray[i + 1];
                                 i++;
                                 break;
                         }

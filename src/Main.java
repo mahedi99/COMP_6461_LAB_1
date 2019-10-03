@@ -6,15 +6,14 @@ import java.util.Scanner;
  */
 
 public class Main {
-    public Scanner scanner =  new Scanner(System.in);
+    public static Scanner scanner =  new Scanner(System.in);
     public static void main(String []a){
         Main main = new Main();
         main.start();
     }
 
     public void start(){
-        System.out.println("Set Request :");
-        String request = scanner.nextLine();
+        String request = userStringInput("Set Request :\n");
         ParseRequest parseRequest = new ParseRequest();
         RequestModel requestModel = parseRequest.parse(request);
 
@@ -31,5 +30,10 @@ public class Main {
                 prepareRequest.makePOSTRequest(requestModel);
                 break;
         }
+    }
+
+    public static String userStringInput(String caption){
+        System.out.print(caption);
+        return scanner.nextLine().trim();
     }
 }
