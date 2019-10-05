@@ -29,6 +29,9 @@ public class Main {
             case Constant.POST :
                 prepareRequest.makePOSTRequest(requestModel);
                 break;
+//            default :
+//                prepareRequest.makeGETRequest(requestModel);
+//                break;
         }
     }
 

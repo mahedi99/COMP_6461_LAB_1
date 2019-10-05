@@ -69,7 +69,7 @@ public class PrepareRequest {
             String fileData = "";
             int fileLength = 0;
             if (requestModel.isFile){
-                FileReader fileReader = new FileReader(requestModel.fileDir + "/" + requestModel.fileName);
+                FileReader fileReader = new FileReader(requestModel.readFileDir + "/" + requestModel.readFileName);
                 read =new BufferedReader(fileReader);
                 String line;
                 while((line = read.readLine())!= null){
@@ -152,9 +152,15 @@ public class PrepareRequest {
         }
         if (model.verbose){
             System.out.println(header + "\n" + body);
+            if (model.isWriteToFile){
+                FileWrite.writeUsingFileWriter(header + "\n" + body, model.writeFileName.trim());
+            }
         }
         else {
             System.out.println(body);
+            if (model.isWriteToFile){
+                FileWrite.writeUsingFileWriter(body, model.writeFileName.trim());
+            }
         }
 
         String redirectURL = "";

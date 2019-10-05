@@ -36,6 +36,11 @@ public class ParseRequest {
 
                 prepareRequestForPost(allCommandPost);
                 break;
+//            default:
+//                requestModel.requestType = "get";
+//                String allCommandDefault = request.substring(request.indexOf(" ", request.indexOf(" "))).trim();
+//                prepareRequestForGet(allCommandDefault);
+//                break;
         }
         return requestModel;
     }
@@ -61,6 +66,11 @@ public class ParseRequest {
                                 }
                                 requestModel.headerData += commandArray[i + 1];
                                 requestModel.isHeader = true;
+                                i++;
+                                break;
+                            case "-o":
+                                requestModel.writeFileName = commandArray[i + 1];
+                                requestModel.isWriteToFile = true;
                                 i++;
                                 break;
                         }
@@ -95,8 +105,8 @@ public class ParseRequest {
                             case "-f":
                                 if (!requestModel.isInlineData) {
                                     requestModel.isFile = true;
-                                    requestModel.fileName = commandArray[i + 1];
-                                    requestModel.fileDir = Main.userStringInput("Provide file path : \n");
+                                    requestModel.readFileName = commandArray[i + 1];
+                                    requestModel.readFileDir = Main.userStringInput("Provide file path : \n");
                                     i++;
                                 } else {
                                     i++;//passing this command
@@ -108,6 +118,11 @@ public class ParseRequest {
                                 }
                                 requestModel.headerData += commandArray[i + 1];
                                 requestModel.isHeader = true;
+                                i++;
+                                break;
+                            case "-o":
+                                requestModel.writeFileName = commandArray[i + 1];
+                                requestModel.isWriteToFile = true;
                                 i++;
                                 break;
                         }

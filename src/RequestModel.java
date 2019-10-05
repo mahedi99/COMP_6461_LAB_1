@@ -14,7 +14,9 @@ public class RequestModel {
     public boolean isInlineData;
     public String inlineData; //-d
     public boolean isFile;
-    public String fileName;
-    public String fileDir;
+    public String readFileName;
+    public String readFileDir;
     public String url;
+    public boolean isWriteToFile;
+    public String writeFileName;
 }
