@@ -1,9 +1,3 @@
-/**
- * @author Mahedi Hassan
- * 2019-09-30
- */
-
-
 public class ParseRequest {
 
     private static RequestModel requestModel = new RequestModel();

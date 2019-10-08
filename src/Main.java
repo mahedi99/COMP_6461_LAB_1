@@ -1,10 +1,5 @@
 import java.util.Scanner;
 
-/**
- * @author Mahedi Hassan
- * 2019-09-30
- */
-
 public class Main {
     public static Scanner scanner =  new Scanner(System.in);
     public static void main(String []a){

@@ -4,12 +4,6 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
-/**
- * @author Mahedi Hassan
- * 2019-10-01
- */
-
 public class PrepareRequest {
 
     private int redirectCounter = 0;

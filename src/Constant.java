@@ -1,7 +1,3 @@
-/**
- * @author Mahedi Hassan
- * 2019-10-01
- */
 
 public class Constant {
 
